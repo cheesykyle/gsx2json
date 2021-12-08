@@ -73,7 +73,7 @@ module.exports = function (req, res, next) {
                         responseObj['rows'] = rows;
                     }
                     if (showOwed === true) {
-                        amountOwed = responseObj['rows'][0]{4};
+                        amountOwed = responseObj['rows'][0];
                     }
                     return res.status(200).json(amountOwed);
                 } else {     
