@@ -72,7 +72,7 @@ module.exports = function (req, res, next) {
                         responseObj['rows'] = rows;
                     }
                     if (showOwed === true) {
-                        return res.status(200).json(rows[4]);
+                        return res.status(200).json(rows["Owed To HCS"]);
                     }
                     return res.status(200).json(responseObj);
                 } else {     
