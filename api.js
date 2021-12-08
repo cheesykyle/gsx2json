@@ -73,7 +73,7 @@ module.exports = function (req, res, next) {
                         responseObj['rows'] = rows;
                     }
                     if (showOwed === true) {
-                        amountOwed = rows[4];
+                        amountOwed = rows['Owed To HCS'];
                     }
                     return res.status(200).json(amountOwed);
                 } else {     
