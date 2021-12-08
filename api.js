@@ -11,7 +11,7 @@ module.exports = function (req, res, next) {
             useIntegers = params.integers || true,
             showRows = params.rows || true,
             showColumns = params.columns || true,
-            showOwed = params.owed || false,
+            showOwed = true,
             url = 'https://sheets.googleapis.com/v4/spreadsheets/' + id + '/values/' + sheet + '?key=' + api_key;
         request(url, function (error, response, body) {
             if (!id) {
