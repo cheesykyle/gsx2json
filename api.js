@@ -11,6 +11,7 @@ module.exports = function (req, res, next) {
             useIntegers = params.integers || true,
             showRows = params.rows || true,
             showColumns = params.columns || true,
+            showOwed = params.columns || false,
             url = 'https://sheets.googleapis.com/v4/spreadsheets/' + id + '/values/' + sheet + '?key=' + api_key;
         request(url, function (error, response, body) {
             if (!id) {
@@ -69,6 +70,9 @@ module.exports = function (req, res, next) {
                     }
                     if (showRows === true) {
                         responseObj['rows'] = rows;
+                    }
+                    if (showOwed === true) {
+                        responseObj = rows[4];
                     }
                     return res.status(200).json(responseObj);
                 } else {     
