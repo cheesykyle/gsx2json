@@ -74,7 +74,7 @@ module.exports = function (req, res, next) {
                     }
                     if (showOwed === true) {
                         responseObj = {}
-                        responseObj = responseObj['rows'][4];
+                        responseObj['owed'] = responseObj['rows'][4];
                         return res.status(200).json(responseOwed);
                     }
                     return res.status(200).json(responseObj);
