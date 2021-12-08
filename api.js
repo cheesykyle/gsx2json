@@ -23,6 +23,7 @@ module.exports = function (req, res, next) {
             if (!error && response.statusCode === 200) {
                 var data = JSON.parse(response.body);
                 var responseObj = {};
+                var responseOwed = {};
                 var rows = [];
                 var columns = {};
 
@@ -72,7 +73,7 @@ module.exports = function (req, res, next) {
                         responseObj['rows'] = rows;
                     }
                     if (showOwed === true) {
-                        responseObj = responseObj['rows'][4];
+                        responseOwed['Amount Owed'] = responseObj['rows'][4];
                     }
                     return res.status(200).json(responseObj);
                 } else {     
