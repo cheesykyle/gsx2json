@@ -75,7 +75,7 @@ module.exports = function (req, res, next) {
                     if (showOwed === true) {
                         amountOwed = responseObj['rows'][0]['Owed To HCS'];
                     }
-                    return res.status(200).json(amountOwed);
+                    return res.status(200).json(responseObj);
                 } else {     
                     var data = JSON.parse(response.body);
                     return res.status(response.statusCode).json(data.error);    
